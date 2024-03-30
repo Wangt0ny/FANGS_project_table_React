@@ -1,0 +1,131 @@
+.right-container {
+    flex: 1;
+    height: 100vh;
+}
+
+.form-layout {
+    position: relative;
+    overflow: hidden;
+}
+
+.tab {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(247, 230, 174, 1);
+    padding-left: 20px;
+    height: 75px;
+    background-color: rgba(48, 48, 48, 1);
+}
+
+.tablinks {
+    outline: none;
+    border: none;
+    font-size: 2em;
+    padding: 10px 15px;
+    text-align: center;
+    background-color: transparent;
+    border-bottom: 5px solid transparent;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.tablinks:hover,
+.tablinks:focus {
+    border-bottom: 5px solid rgba(247, 230, 174, 1);
+    color: rgba(247, 230, 174, 1);
+}
+
+.tabcontent {
+    width: 100%;
+    background-color: rgba(48, 48, 48, 1);
+    height: calc(100% - 75px);
+    overflow-y: scroll;
+    padding: 0px 100px 150px 10px;
+}
+
+
+/* scrollbar自定義 */
+.tabcontent::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+.tabcontent::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+
+.tabcontent::-webkit-scrollbar-thumb {
+    background: rgba(247, 230, 174, 1);
+    border-radius: 10px;
+}
+
+.tabcontent::-webkit-scrollbar-thumb:hover {
+    background: rgba(230, 151, 98, 1);
+}
+
+.tabcontent::-webkit-scrollbar-button {
+    background: none;
+}
+
+
+.row {
+    margin: 0 !important;
+}
+
+.item {
+    margin-top: 20px;
+}
+
+.mycard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: #fff;
+    height: 100px;
+}
+
+.menu-img {
+    object-fit: cover;
+}
+
+.mycard-body {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+}
+
+.body-info {
+    flex: 55%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.25em;
+    margin-left: 10px;
+}
+
+.card-text {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.card-btn-group {
+    font-size: 1.75em;
+    display: flex;
+    gap: 20px;
+    padding-right: 15px;
+}
+
+.card-btn-group>* {
+    cursor: pointer;
+}
+
+.bi-trash {
+    color: red;
+}
