@@ -1,6 +1,9 @@
+
 function ReportPage() {
     return (
-        <>ReportPage</>
+        <>
+            ReportPage
+        </>
     );
 }
 

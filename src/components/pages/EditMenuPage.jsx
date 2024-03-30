@@ -1,6 +1,9 @@
+
 function EditMenuPage() {
     return (
-        <>EditMenuPage</>
+        <>
+            EditMenuPage
+        </>
     );
 }
 
