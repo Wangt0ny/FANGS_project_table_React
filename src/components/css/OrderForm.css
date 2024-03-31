@@ -1,0 +1,197 @@
+.form-page {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 75px;
+    flex-direction: column;
+    width: 50%;
+    height: calc(100vh - 75px);
+    border: 1px solid black;
+    padding: 10px 20px 50px 20px;
+    justify-content: space-between;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+    z-index: 99;
+}
+
+.form-page.active {
+    transform: translateX(0%);
+}
+
+.form-title {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.form-option {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+}
+
+.item-input {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.item-input>input {
+    width: 85%;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    height: 100%;
+    border-radius: 5px;
+    /* outline: 2px solid rgba(255, 0, 0, .7); */
+}
+
+.item-input>label {
+    width: 15%;
+    font-size: 1.25em;
+    font-weight: 600;
+    /* height: 100%; */
+}
+
+/* 下拉式開始 */
+.custom-select {
+    position: relative;
+    width: 100%;
+    height: auto;
+    font-weight: 600;
+    /* padding: 0px 5px; */
+    /* background-color: rgba(247, 230, 174, 1); */
+}
+
+/* 隱藏原本select box */
+/* .custom-select select {
+    display: none;
+} */
+
+.select-selected {
+    background-color: rgba(247, 230, 174, 1);
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-color: black transparent transparent transparent;
+    transform-origin: top;
+    transition: all .3s linear;
+}
+
+.select-selected.select-arrow-active:after {
+    /* border-color: transparent transparent black transparent; */
+    top: 22px;
+    transform: rotate(180deg);
+}
+
+.select-items div,
+.select-selected {
+    color: black;
+    padding: 8px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    cursor: pointer;
+    user-select: none;
+}
+
+.select-items {
+    position: absolute;
+    background-color: rgba(247, 230, 174, 1);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-item-img {
+    padding: 10px;
+    background-color: rgba(228, 228, 228, 1);
+    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    font-size: 1.25em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.upload-item-img:hover,
+.upload-item-img:focus {
+    background-color: rgba(247, 230, 174, 1);
+    outline: 1px solid rgba(0, 0, 0, .2);
+}
+
+.bi-file-earmark-image {
+    margin-right: 5px;
+}
+
+#file-name {
+    height: auto;
+}
+
+#file-img {
+    width: 100px;
+}
+
+.form-btn-group {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.form-btn {
+    border: none;
+    outline: none;
+    background-color: rgba(247, 230, 174, 1);
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.plus-icon {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    right: 35px;
+    bottom: 30px;
+    background-color: rgba(247, 230, 174, 1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.bi-plus-lg {
+    font-size: 40px;
+    width: 100%;
+    /* height: 72px; */
+    display: inline-block;
+    text-align: center;
+}

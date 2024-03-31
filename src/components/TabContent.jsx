@@ -1,6 +1,9 @@
 function TabContent(props) {
     let productDataList = props.data
     let index = props.index
+    let setId = props.setId
+    let setSwitchForm = props.setSwitchForm
+    let setFormOpen = props.setFormOpen
 
     let meatType = productDataList.filter((x) => { return x.type === "meat" });
     let seafoodType = productDataList.filter((x) => { return x.type === "seafood" });
@@ -8,9 +11,14 @@ function TabContent(props) {
     let dumplingsType = productDataList.filter((x) => { return x.type === "dumplings" });
     let hotpotType = productDataList.filter((x) => { return x.type === "hotpot" });
 
-    let typeList = [meatType, seafoodType, vegetableType, dumplingsType, hotpotType]
+    let typeList = [hotpotType, meatType, seafoodType, vegetableType, dumplingsType]
 
-    // console.log(typeList)
+    function editForm(id) {
+        setId(id);
+        setSwitchForm(true);
+        setFormOpen(true);
+    }
+
     return (
         <div className="tabcontent">
             <div className="row">
@@ -27,7 +35,7 @@ function TabContent(props) {
                                             <p className="card-text">${price}</p>
                                         </div>
                                         <div className="card-btn-group">
-                                            <i className="bi bi-pencil"></i>
+                                            <i className="bi bi-pencil" onClick={() => editForm(id)}></i>
                                             <i className="bi bi-trash"></i>
                                         </div>
                                     </div>
