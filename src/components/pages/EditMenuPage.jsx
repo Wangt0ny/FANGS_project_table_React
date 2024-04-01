@@ -26,10 +26,12 @@ function EditMenuPage() {
                 setFormOpen={setFormOpen} />
 
             <OrderForm id={id}
+                setId={setId}
                 data={productDataList}
                 formOpen={formOpen}
                 setFormOpen={setFormOpen}
-                switchForm={switchForm} />
+                switchForm={switchForm}
+                setSwitchForm={setSwitchForm} />
 
             <OrderFormButton setFormOpen={setFormOpen}
                 setSwitchForm={setSwitchForm} />

@@ -4,15 +4,26 @@ import './css/OrderForm.css'
 function OrderForm(props) {
     let productDataList = props.data;
     let id = props.id
+    let setId = props.setId
     let setFormOpen = props.setFormOpen
     let formOpen = props.formOpen
     let switchForm = props.switchForm
+    let setSwitchForm = props.setSwitchForm
 
-    let search = productDataList.find(item => item.id === id) || '';
+    let search = productDataList.find(item => item.id === id);
+
+    function foo() {
+        if (search) {
+            let optValueList = [...selectCurrent.getElementsByTagName('select')[0].options].map(opt => opt.value)
+            let currentIndex = optValueList.indexOf(search.type)
+            console.log(currentIndex)
+            return currentIndex
+        }
+    }
 
     let [nameInput, setNameInput] = useState('')
     let [priceInput, setPriceInput] = useState('')
-    let [typeInput, setTypeInput] = useState('')
+    let [typeInput, setTypeInput] = useState('meat')
     let [imgInput, setImgInput] = useState(null)
     let [openSelect, setOpenSelect] = useState(false)
     let [selected, setSelected] = useState(0)
@@ -20,34 +31,42 @@ function OrderForm(props) {
     const selectType = useRef();
     const selectCurrent = selectType.current;
 
-
-    function foo(inx) {
-        setSelected(inx)
+    function handleselected(val) {
+        setTypeInput(val)
+        setOpenSelect(false)
     }
-    useEffect(() => { if (selectCurrent !== undefined) { selectCurrent.getElementsByTagName('select')[0].selectedIndex = selected } }, [selected])
+    // useEffect(() => { if (selectCurrent !== undefined) { selectCurrent.getElementsByTagName('select')[0].selectedIndex = selected } }, [selected])
 
     function getOptions() {
         if (selectCurrent !== undefined) {
             return [...selectCurrent.getElementsByTagName('select')[0].options].map((item, index) => {
-                return <div key={item.innerHTML} onClick={() => foo(index)}>{item.innerHTML}</div>
+                return <div key={item.innerHTML} onClick={() => handleselected(item.value)}>{item.innerHTML}</div>
             })
         } else {
             return []
         }
-        // console.log(selectCurrent.getElementsByTagName('select')[0].selectedIndex)
     }
 
-    // document.getElementsByTagName('select').length
+    function getSelected() {
+        if (selectCurrent !== undefined) {
+            let optValue = [...selectCurrent.getElementsByTagName('select')[0].options].map(opt => opt.value)
+            return [...selectCurrent.getElementsByTagName('select')[0].options][optValue.indexOf(typeInput)].innerHTML
+        }
+    }
+    console.log(getSelected())
 
     function handleName(e) {
         setNameInput(e.target.value)
     }
+
     function handlePrice(e) {
         setPriceInput(e.target.value)
     }
+
     function handleType(e) {
         setTypeInput(e.target.value)
     }
+
     function handleFile(e) {
         setImgInput(e.target.files[0])
     }
@@ -56,8 +75,10 @@ function OrderForm(props) {
         setFormOpen(false)
         setNameInput('')
         setPriceInput('')
-        setTypeInput('')
         setImgInput('')
+        setSelected(0)
+        setSwitchForm(false)
+        setId(null)
     }
 
     return (
@@ -94,7 +115,7 @@ function OrderForm(props) {
                         <option value="dumplings">火鍋餃類</option>
                     </select>
                     <div className={openSelect ? 'select-selected select-arrow-active' : 'select-selected'}
-                        onClick={() => setOpenSelect(!openSelect)}>肉類</div>
+                        onClick={() => setOpenSelect(!openSelect)}>{getSelected()}</div>
                     <div className={openSelect ? 'select-items' : 'select-items select-hide'} >
                         {getOptions()}
                     </div>
