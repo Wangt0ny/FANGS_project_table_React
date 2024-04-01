@@ -70,9 +70,9 @@
 }
 
 /* 隱藏原本select box */
-/* .custom-select select {
+.custom-select select {
     display: none;
-} */
+}
 
 .select-selected {
     background-color: rgba(247, 230, 174, 1);

@@ -1,9 +1,13 @@
 function TabContent(props) {
-    let productDataList = props.data
-    let index = props.index
-    let setId = props.setId
-    let setSwitchForm = props.setSwitchForm
-    let setFormOpen = props.setFormOpen
+    let {
+        productDataList,
+        index,
+        setSwitchForm,
+        setFormOpen,
+        setNameInput,
+        setPriceInput,
+        setTypeInput
+    } = props
 
     let meatType = productDataList.filter((x) => { return x.type === "meat" });
     let seafoodType = productDataList.filter((x) => { return x.type === "seafood" });
@@ -13,17 +17,19 @@ function TabContent(props) {
 
     let typeList = [hotpotType, meatType, seafoodType, vegetableType, dumplingsType]
 
-    function editForm(id) {
-        setId(id);
+    function editForm(price, product, type) {
         setSwitchForm(true);
         setFormOpen(true);
+        setPriceInput(price);
+        setNameInput(product);
+        setTypeInput(type)
     }
 
     return (
         <div className="tabcontent">
             <div className="row">
                 {typeList[index].map(item => {
-                    let { id, img, price, product } = item
+                    let { id, img, price, product, type } = item
                     return (
                         <div className="col-md-6" key={id}>
                             <div className="item">
@@ -35,7 +41,7 @@ function TabContent(props) {
                                             <p className="card-text">${price}</p>
                                         </div>
                                         <div className="card-btn-group">
-                                            <i className="bi bi-pencil" onClick={() => editForm(id)}></i>
+                                            <i className="bi bi-pencil" onClick={() => editForm(price, product, type)}></i>
                                             <i className="bi bi-trash"></i>
                                         </div>
                                     </div>

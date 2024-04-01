@@ -2,31 +2,22 @@ import { useEffect, useRef, useState } from 'react';
 import './css/OrderForm.css'
 
 function OrderForm(props) {
-    let productDataList = props.data;
-    let id = props.id
-    let setId = props.setId
-    let setFormOpen = props.setFormOpen
-    let formOpen = props.formOpen
-    let switchForm = props.switchForm
-    let setSwitchForm = props.setSwitchForm
+    let {
+        formOpen,
+        setFormOpen,
+        switchForm,
+        setSwitchForm,
+        nameInput,
+        setNameInput,
+        priceInput,
+        setPriceInput,
+        typeInput,
+        setTypeInput,
+        imgInput,
+        setImgInput
+    } = props
 
-    let search = productDataList.find(item => item.id === id);
-
-    function foo() {
-        if (search) {
-            let optValueList = [...selectCurrent.getElementsByTagName('select')[0].options].map(opt => opt.value)
-            let currentIndex = optValueList.indexOf(search.type)
-            console.log(currentIndex)
-            return currentIndex
-        }
-    }
-
-    let [nameInput, setNameInput] = useState('')
-    let [priceInput, setPriceInput] = useState('')
-    let [typeInput, setTypeInput] = useState('meat')
-    let [imgInput, setImgInput] = useState(null)
     let [openSelect, setOpenSelect] = useState(false)
-    let [selected, setSelected] = useState(0)
 
     const selectType = useRef();
     const selectCurrent = selectType.current;
@@ -35,11 +26,10 @@ function OrderForm(props) {
         setTypeInput(val)
         setOpenSelect(false)
     }
-    // useEffect(() => { if (selectCurrent !== undefined) { selectCurrent.getElementsByTagName('select')[0].selectedIndex = selected } }, [selected])
 
     function getOptions() {
         if (selectCurrent !== undefined) {
-            return [...selectCurrent.getElementsByTagName('select')[0].options].map((item, index) => {
+            return [...selectCurrent.getElementsByTagName('select')[0].options].map((item) => {
                 return <div key={item.innerHTML} onClick={() => handleselected(item.value)}>{item.innerHTML}</div>
             })
         } else {
@@ -49,11 +39,14 @@ function OrderForm(props) {
 
     function getSelected() {
         if (selectCurrent !== undefined) {
-            let optValue = [...selectCurrent.getElementsByTagName('select')[0].options].map(opt => opt.value)
-            return [...selectCurrent.getElementsByTagName('select')[0].options][optValue.indexOf(typeInput)].innerHTML
+            let optList = [...selectCurrent.getElementsByTagName('select')[0].options]
+            let optValueList = [...selectCurrent.getElementsByTagName('select')[0].options].map(opt => opt.value)
+            console.log(optList)
+            console.log(optList[optValueList.indexOf(typeInput)].innerHTML)
+            return optList[optValueList.indexOf(typeInput)].innerHTML
         }
     }
-    console.log(getSelected())
+
 
     function handleName(e) {
         setNameInput(e.target.value)
@@ -76,9 +69,8 @@ function OrderForm(props) {
         setNameInput('')
         setPriceInput('')
         setImgInput('')
-        setSelected(0)
+        setTypeInput('meat')
         setSwitchForm(false)
-        setId(null)
     }
 
     return (
@@ -91,7 +83,7 @@ function OrderForm(props) {
                     <input type="text"
                         id="item-name"
                         name="item-name"
-                        value={switchForm ? search.product : nameInput}
+                        value={nameInput}
                         onChange={(e) => handleName(e)}
                         required />
                 </div>
@@ -101,7 +93,7 @@ function OrderForm(props) {
                     <input type="text"
                         id="item-price"
                         name="item-price"
-                        value={switchForm ? search.price : priceInput}
+                        value={priceInput}
                         onChange={(e) => handlePrice(e)}
                         required />
                 </div>

@@ -9,29 +9,40 @@ import OrderFormButton from '../OrderFormButton';
 function EditMenuPage() {
     // console.log(productDataList)
     let [index, setIndex] = useState(1);
-    let [id, setId] = useState(null);
     let [formOpen, setFormOpen] = useState(false)
     let [switchForm, setSwitchForm] = useState(false)
+
+    let [nameInput, setNameInput] = useState('')
+    let [priceInput, setPriceInput] = useState('')
+    let [typeInput, setTypeInput] = useState('meat')
+    let [imgInput, setImgInput] = useState(null)
 
     return (
         <div className="right-container form-layout">
             <TabButtons data={productDataList}
                 setIndex={setIndex} />
 
-            <TabContent data={productDataList}
+            <TabContent productDataList={productDataList}
                 index={index}
-                setId={setId}
                 setSwitchForm={setSwitchForm}
-                switchForm={switchForm}
-                setFormOpen={setFormOpen} />
+                setFormOpen={setFormOpen}
+                setNameInput={setNameInput}
+                setPriceInput={setPriceInput}
+                setTypeInput={setTypeInput} />
 
-            <OrderForm id={id}
-                setId={setId}
-                data={productDataList}
+            <OrderForm
                 formOpen={formOpen}
                 setFormOpen={setFormOpen}
                 switchForm={switchForm}
-                setSwitchForm={setSwitchForm} />
+                setSwitchForm={setSwitchForm}
+                nameInput={nameInput}
+                setNameInput={setNameInput}
+                priceInput={priceInput}
+                setPriceInput={setPriceInput}
+                typeInput={typeInput}
+                setTypeInput={setTypeInput}
+                imgInput={imgInput}
+                setImgInput={setImgInput} />
 
             <OrderFormButton setFormOpen={setFormOpen}
                 setSwitchForm={setSwitchForm} />
