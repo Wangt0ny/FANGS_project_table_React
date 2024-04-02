@@ -41,8 +41,8 @@ function OrderForm(props) {
         if (selectCurrent !== undefined) {
             let optList = [...selectCurrent.getElementsByTagName('select')[0].options]
             let optValueList = [...selectCurrent.getElementsByTagName('select')[0].options].map(opt => opt.value)
-            console.log(optList)
-            console.log(optList[optValueList.indexOf(typeInput)].innerHTML)
+            // console.log(optList)
+            // console.log(optList[optValueList.indexOf(typeInput)].innerHTML)
             return optList[optValueList.indexOf(typeInput)].innerHTML
         }
     }
@@ -71,6 +71,7 @@ function OrderForm(props) {
         setImgInput('')
         setTypeInput('meat')
         setSwitchForm(false)
+        setOpenSelect(false)
     }
 
     return (
@@ -101,6 +102,7 @@ function OrderForm(props) {
                 <div className="custom-select" ref={selectType}>
                     <select name="select-type" value={typeInput} onChange={handleType}>
                         {/* <option value="0">種類</option> */}
+                        <option value="hotpot">鍋類</option>
                         <option value="meat">肉類</option>
                         <option value="seafood">海鮮類</option>
                         <option value="vegetable">蔬菜類</option>

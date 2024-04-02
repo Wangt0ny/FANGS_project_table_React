@@ -20,7 +20,8 @@ function EditMenuPage() {
     return (
         <div className="right-container form-layout">
             <TabButtons data={productDataList}
-                setIndex={setIndex} />
+                setIndex={setIndex}
+                setFormOpen={setFormOpen} />
 
             <TabContent productDataList={productDataList}
                 index={index}

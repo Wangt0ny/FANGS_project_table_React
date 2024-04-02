@@ -1,7 +1,6 @@
-function TabButtons(props) {
+function OrderTabButtons(props) {
 
-    let setIndex = props.setIndex
-    let setFormOpen = props.setFormOpen
+    let { setIndex } = props
 
     let tabList = [
         {
@@ -26,17 +25,18 @@ function TabButtons(props) {
         },
     ]
 
-    function switchIndex(num) {
-        setIndex(num)
-        setFormOpen(false)
+    function switchIndex(inx) {
+        setIndex(inx)
     }
+
     return (
         <div className="tab">
-            {tabList.map((item, index) => <button className="tablinks"
+            <a className="goback-button" href="/"><i className="bi bi-arrow-left-short"></i></a>
+            {tabList.map((item, index) => <button className="order-tablinks"
                 onClick={() => { switchIndex(index) }}
                 key={item.id}>{item.type}</button>)}
         </div>
     );
 }
 
-export default TabButtons;
+export default OrderTabButtons;
