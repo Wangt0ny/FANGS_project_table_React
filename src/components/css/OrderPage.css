@@ -168,13 +168,14 @@
 /* =======================購物車結束======================= */
 
 /*  ======================品項區開始====================== */
-.tab {
+.order-tab {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: start;
+    gap: 20px;
     align-items: center;
     border-bottom: 1px solid rgba(247, 230, 174, 1);
-    padding-left: 10px;
+    padding-left: 20px;
     height: 75px;
     background-color: rgba(48, 48, 48, 1);
 }
@@ -282,7 +283,7 @@
     font-size: 16px;
 }
 
-.card-btn-group {
+.order-card-btn-group {
     font-size: 1.5em;
     display: flex;
     height: auto;

@@ -30,7 +30,7 @@ function OrderTabButtons(props) {
     }
 
     return (
-        <div className="tab">
+        <div className="order-tab">
             <a className="goback-button" href="/"><i className="bi bi-arrow-left-short"></i></a>
             {tabList.map((item, index) => <button className="order-tablinks"
                 onClick={() => { switchIndex(index) }}

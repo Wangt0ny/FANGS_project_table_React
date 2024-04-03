@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import './css/OrderForm.css'
+import './css/EditMenuForm.css'
 
-function OrderForm(props) {
+function EditMenuForm(props) {
     let {
         formOpen,
         setFormOpen,
@@ -130,4 +130,4 @@ function OrderForm(props) {
     )
 }
 
-export default OrderForm;
+export default EditMenuForm;

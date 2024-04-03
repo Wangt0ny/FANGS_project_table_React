@@ -3,8 +3,8 @@ import productDataList from '../../assets/data'
 import TabButtons from '../TabButtons'
 import TabContent from '../TabContent'
 import '../css/EditMenuPage.css';
-import OrderForm from '../OrderForm';
-import OrderFormButton from '../OrderFormButton';
+import EditMenuForm from '../EditMenuForm';
+import EditMenuFormButton from '../EditMenuFormButton';
 
 function EditMenuPage() {
     // console.log(productDataList)
@@ -31,7 +31,7 @@ function EditMenuPage() {
                 setPriceInput={setPriceInput}
                 setTypeInput={setTypeInput} />
 
-            <OrderForm
+            <EditMenuForm
                 formOpen={formOpen}
                 setFormOpen={setFormOpen}
                 switchForm={switchForm}
@@ -45,7 +45,7 @@ function EditMenuPage() {
                 imgInput={imgInput}
                 setImgInput={setImgInput} />
 
-            <OrderFormButton setFormOpen={setFormOpen}
+            <EditMenuFormButton setFormOpen={setFormOpen}
                 setSwitchForm={setSwitchForm} />
         </div>
     );

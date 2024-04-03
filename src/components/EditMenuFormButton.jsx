@@ -1,4 +1,4 @@
-function OrderFormButton(props) {
+function EditMenuFormButton(props) {
     let setFormOpen = props.setFormOpen
     let setSwitchForm = props.setSwitchForm
 
@@ -14,4 +14,4 @@ function OrderFormButton(props) {
     );
 }
 
-export default OrderFormButton;
+export default EditMenuFormButton;
