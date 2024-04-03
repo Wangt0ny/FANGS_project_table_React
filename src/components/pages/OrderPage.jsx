@@ -5,12 +5,14 @@ import { useState } from "react";
 import OrderTabButtons from "../OrderTabButtons";
 import OrderTabContent from "../OrderTabContent";
 import OrderShopcart from "../OrderShopcart";
+import OrderListSection from "../OrderListSection";
 
 
 function OrderPage() {
     let { num } = useParams();
     let [index, setIndex] = useState(1);
     let [shopcart, setShopcart] = useState([]); // 購物車{ id: "hotPot01", item: 1 }, { id: "hotPot02", item: 1 }
+    let [orderList, setOrderList] = useState([]);
 
     return (
         <>
@@ -28,15 +30,7 @@ function OrderPage() {
                 setShopcart={setShopcart}
             />
 
-            <div className="order-page" id="order-page">
-                <div className="order-title">訂單紀錄</div>
-                <div className="order-list" id="order-list">
-
-                </div>
-                <div id="order-to-pay-content">
-                    <a href="#" id="order-to-pay">前往結帳<i className="bi bi-arrow-right-short"></i></a>
-                </div>
-            </div>
+            <OrderListSection />
         </>
     );
 }

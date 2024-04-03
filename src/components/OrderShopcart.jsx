@@ -31,6 +31,14 @@ function OrderShopcart(props) {
         setShopcart([])
     }
 
+    function displayOrderButton() {
+        if (shopcart.length !== 0) {
+            return 'cart-btn-content active'
+        } else {
+            return 'cart-btn-content'
+        }
+    }
+
     return (
         <div className="cart-page">
             <div className="table-number-content">
@@ -41,10 +49,10 @@ function OrderShopcart(props) {
                 <div className="cart-list">
                     {shopcartItem()}
                 </div>
-                <div id="cart-btn-content">
+                <div className={displayOrderButton()}>
                     <div className="cart-btn-group">
-                        <div className="cart-btn">送出
-                            <span className="cart-quantity">{getTotalItem()}</span>訂單
+                        <div className="cart-btn">
+                            送出<span className="cart-quantity">{getTotalItem()}</span>訂單
                         </div>
                         <div className="cart-btn" onClick={deleteShopcart}>
                             清空購物車

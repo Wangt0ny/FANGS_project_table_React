@@ -89,9 +89,14 @@
 /* 自定義scrollbar結束 */
 
 
-#cart-btn-content {
+.cart-btn-content {
     margin-top: auto;
     margin-bottom: 20px;
+    display: none;
+}
+
+.cart-btn-content.active {
+    display: block;
 }
 
 .cart-btn-group {
@@ -388,13 +393,13 @@
 /* scrollbar自定義 */
 
 /* 前往結帳區開始 */
-#order-to-pay-content {
+.order-to-pay-content {
     /* background-color: pink; */
     margin-top: auto;
     margin-bottom: 10px;
 }
 
-#order-to-pay {
+.order-to-pay {
     border: none;
     outline: none;
     background-color: rgba(247, 230, 174, 1);
