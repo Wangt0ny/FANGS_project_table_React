@@ -29,9 +29,13 @@ function OrderTabButtons(props) {
         setIndex(inx)
     }
 
+    function clearShopCart() {
+        localStorage.setItem('cart', JSON.stringify([]))
+    }
+
     return (
         <div className="order-tab">
-            <a className="goback-button" href="/"><i className="bi bi-arrow-left-short"></i></a>
+            <a className="goback-button" href="/" onClick={clearShopCart}><i className="bi bi-arrow-left-short"></i></a>
             {tabList.map((item, index) => <button className="order-tablinks"
                 onClick={() => { switchIndex(index) }}
                 key={item.id}>{item.type}</button>)}

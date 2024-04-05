@@ -6,7 +6,7 @@ function OrderListSection(props) {
     return (
         <div className="order-page">
             <div className="order-title">訂單紀錄</div>
-            <div className="order-list">
+            <div className="order-page-list">
                 {orderList.map(items => {
                     let { id, item } = items
                     return <OrderItem

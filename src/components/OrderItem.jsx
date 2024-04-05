@@ -12,7 +12,7 @@ function OrderItem(props) {
         <div className="order-item">
             <div className="order-info">
                 <p className="order-info-title">{search.product}</p>
-                <div className="order-info-price">{search.price}</div>
+                <div className="order-info-price">${search.price}</div>
             </div>
             <div className="order-info-quantity"><span>{item}</span></div>
             <i className="bi bi-trash" onClick={() => { deleteOrderItem(id) }}></i>
