@@ -394,9 +394,13 @@
 
 /* 前往結帳區開始 */
 .order-to-pay-content {
-    /* background-color: pink; */
     margin-top: auto;
     margin-bottom: 10px;
+    display: none;
+}
+
+.order-to-pay-content.active {
+    display: block;
 }
 
 .order-to-pay {

@@ -28,9 +28,15 @@ function OrderPage() {
                 productDataList={productDataList}
                 shopcart={shopcart}
                 setShopcart={setShopcart}
+                orderList={orderList}
+                setOrderList={setOrderList}
             />
 
-            <OrderListSection />
+            <OrderListSection productDataList={productDataList}
+                orderList={orderList}
+                setOrderList={setOrderList}
+                num={num}
+            />
         </>
     );
 }

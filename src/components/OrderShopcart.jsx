@@ -1,7 +1,7 @@
 import OrderShopcartItem from './OrderShopcartItem'
 
 function OrderShopcart(props) {
-    let { num, productDataList, shopcart, setShopcart } = props
+    let { num, productDataList, shopcart, setShopcart, setOrderList, orderList } = props
 
     function shopcartItem() {
         if (shopcart.length !== 0) {
@@ -23,14 +23,6 @@ function OrderShopcart(props) {
         }
     }
 
-    function getTotalItem() {
-        return shopcart.map((x) => x.item).reduce((x, y) => x + y, 0);
-    }
-
-    function deleteShopcart() {
-        setShopcart([])
-    }
-
     function displayOrderButton() {
         if (shopcart.length !== 0) {
             return 'cart-btn-content active'
@@ -38,6 +30,23 @@ function OrderShopcart(props) {
             return 'cart-btn-content'
         }
     }
+
+    function getTotalItem() {
+        return shopcart.map((x) => x.item).reduce((x, y) => x + y, 0);
+    }
+
+    function sentShopcart() {
+        let newList = [...orderList]
+        newList = newList.concat(shopcart)
+        setOrderList(newList)
+        setShopcart([])
+    }
+
+    function deleteShopcart() {
+        setShopcart([])
+    }
+
+
 
     return (
         <div className="cart-page">
@@ -51,7 +60,7 @@ function OrderShopcart(props) {
                 </div>
                 <div className={displayOrderButton()}>
                     <div className="cart-btn-group">
-                        <div className="cart-btn">
+                        <div className="cart-btn" onClick={sentShopcart}>
                             送出<span className="cart-quantity">{getTotalItem()}</span>訂單
                         </div>
                         <div className="cart-btn" onClick={deleteShopcart}>
