@@ -26,6 +26,7 @@ function OrderTabContent(props) {
             })
             setShopcart(newShopcart)
         }
+        // localStorage.setItem('cart', JSON.stringify(shopcart))
     }
 
     function decrement(id) {
@@ -47,6 +48,7 @@ function OrderTabContent(props) {
         newShopcart = newShopcart.filter((x) => x.item !== 0);
 
         setShopcart(newShopcart)
+        // localStorage.setItem('cart', JSON.stringify(shopcart))
     }
 
     function quantity(id) {

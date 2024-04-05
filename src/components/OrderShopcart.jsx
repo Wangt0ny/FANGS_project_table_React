@@ -1,7 +1,13 @@
 import OrderShopcartItem from './OrderShopcartItem'
 
 function OrderShopcart(props) {
-    let { num, productDataList, shopcart, setShopcart, setOrderList, orderList } = props
+    let { num,
+        productDataList,
+        shopcart,
+        setShopcart,
+        setOrderList,
+        orderList,
+    } = props
 
     function shopcartItem() {
         if (shopcart.length !== 0) {
