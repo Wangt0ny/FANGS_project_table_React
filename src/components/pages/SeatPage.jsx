@@ -3,7 +3,8 @@ import SeatItem from '../SeatItem'
 import '../css/seatPage.css'
 import { useState } from "react";
 
-function SeatPage() {
+function SeatPage(props) {
+    let { onSeat, setOnSeat } = props
     let [Open, setOpen] = useState(false);
 
     function closeOption(e) {
@@ -16,7 +17,9 @@ function SeatPage() {
             key={seat.num}
             seatNum={seat.num}
             Open={Open}
-            setOpen={setOpen} />)
+            setOpen={setOpen}
+            onSeat={onSeat}
+            setOnSeat={setOnSeat} />)
     }
 
     return (

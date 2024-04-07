@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 import '../css/PayPage.css'
 import PayOrderItem from "../PayOrderItem";
 
-function PayPage() {
+function PayPage(props) {
+    let { onSeat, setOnSeat } = props
     let { num } = useParams()
 
     let items = [
@@ -48,6 +49,14 @@ function PayPage() {
         return (getOrderPrice() + getOrderFee())
     }
 
+    function clearTable(number) {
+        console.log(number)
+        let newArray = [...onSeat]
+        newArray = newArray.filter(x => x != number)
+        console.log(newArray)
+        setOnSeat(newArray)
+    }
+
     return (
         <>
             <div className="pay-order-content">
@@ -76,7 +85,7 @@ function PayPage() {
             </div>
             <div className="pay-page">
                 <div className="pay-title">付款方式</div>
-                <div className="pay-button">
+                <div className="pay-button" onClick={() => clearTable(num)}>
                     <i className="bi bi-coin"></i>現金支付
                 </div>
                 <div className="pay-button">
