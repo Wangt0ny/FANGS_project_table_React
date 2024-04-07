@@ -53,7 +53,6 @@ function PayPage(props) {
         console.log(number)
         let newArray = [...onSeat]
         newArray = newArray.filter(x => x != number)
-        console.log(newArray)
         setOnSeat(newArray)
     }
 
