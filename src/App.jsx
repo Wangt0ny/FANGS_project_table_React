@@ -6,6 +6,7 @@ import OrderPage from "./components/pages/OrderPage";
 import PayPage from "./components/pages/PayPage";
 import Navbar from "./components/Navbar";
 import { useEffect, useState } from "react";
+import MobileApp from "./components/pages/mobile/MobileApp";
 
 
 function APP() {
@@ -17,23 +18,26 @@ function APP() {
 
 
   return (
-    <div className="page-wrapper">
-      <Routes>
-        <Route path="/" element={<Navbar />} />
-        <Route path="/edit" element={<Navbar />} />
-        <Route path="/report" element={<Navbar />} />
-        <Route path="/order/:num" element={<></>} />
-        <Route path="/pay/:num" element={<></>} />
-      </Routes>
-      <Routes>
-        <Route path="/" element={<SeatPage onSeat={onSeat} setOnSeat={setOnSeat} />} />
-        <Route path="/edit" element={<EditMenuPage />} />
-        <Route path="/report" element={<ReportPage />} />
-        <Route path="/order/:num" element={<OrderPage />} />
-        <Route path="/pay/:num" element={<PayPage onSeat={onSeat} setOnSeat={setOnSeat} />} />
-      </Routes>
-    </div>
-
+    <>
+      <div className="page-wrapper">
+        <Routes>
+          <Route path="/" element={<Navbar />} />
+          <Route path="/edit" element={<Navbar />} />
+          <Route path="/report" element={<Navbar />} />
+          <Route path="/order/:num" element={<></>} />
+          <Route path="/pay/:num" element={<></>} />
+          <Route path="/mobile" element={<></>} />
+        </Routes>
+        <Routes>
+          <Route path="/" element={<SeatPage onSeat={onSeat} setOnSeat={setOnSeat} />} />
+          <Route path="/edit" element={<EditMenuPage />} />
+          <Route path="/report" element={<ReportPage />} />
+          <Route path="/order/:num" element={<OrderPage />} />
+          <Route path="/pay/:num" element={<PayPage onSeat={onSeat} setOnSeat={setOnSeat} />} />
+          <Route path="/mobile" element={<MobileApp />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

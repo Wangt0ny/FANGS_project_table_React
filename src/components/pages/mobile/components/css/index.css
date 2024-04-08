@@ -1,0 +1,16 @@
+/* html {
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    top: 120px;
+    overflow: hidden;
+} */
+
+.mobile-page-wrapper {
+    height: calc(100vh - 120px);
+    width: 100%;
+    background-color: #fff;
+    overflow-y: auto;
+}

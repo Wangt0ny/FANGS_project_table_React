@@ -1,0 +1,45 @@
+.mobile-order-page {
+    position: absolute;
+    top: 0;
+    color: #fff;
+    background-color: rgba(44, 41, 41, .9);
+    padding: 5px 5px 0px 5px;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 300ms ease-in-out;
+}
+
+.mobile-order-page.active {
+    transform: translateX(0%);
+}
+
+.mb-close-order-page {
+    font-size: 1.75em;
+    position: static !important;
+    top: 3px;
+    left: 3px;
+    cursor: pointer;
+}
+
+.order-price-content {
+    width: 100%;
+    border-top: 1px solid #fff;
+    padding: 5px;
+    margin-top: 10px;
+    height: auto;
+}
+
+.order-price-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.mobile-cart {
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: 600;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
