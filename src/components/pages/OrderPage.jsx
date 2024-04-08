@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import '../css/OrderPage.css'
+import '../../assets/css/OrderPage.css'
 import productDataList from '../../assets/data'
 import { useEffect, useState } from "react";
 import OrderTabButtons from "../OrderTabButtons";

@@ -1,6 +1,6 @@
 import seatList from '../../assets/seatList'
 import SeatItem from '../SeatItem'
-import '../css/seatPage.css'
+import '../../assets/css/seatPage.css'
 import { useState } from "react";
 
 function SeatPage(props) {

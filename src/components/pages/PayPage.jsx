@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import '../css/PayPage.css'
+import '../../assets/css/PayPage.css'
 import PayOrderItem from "../PayOrderItem";
 
 function PayPage(props) {

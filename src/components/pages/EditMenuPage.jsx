@@ -2,7 +2,7 @@ import { useState } from 'react';
 import productDataList from '../../assets/data'
 import TabButtons from '../TabButtons'
 import TabContent from '../TabContent'
-import '../css/EditMenuPage.css';
+import '../../assets/css/EditMenuPage.css';
 import EditMenuForm from '../EditMenuForm';
 import EditMenuFormButton from '../EditMenuFormButton';
 

@@ -1,4 +1,4 @@
-import '../css/ReportPage.css'
+import '../../assets/css/ReportPage.css'
 import crown from '../../assets/crown.svg'
 import { Bar } from 'react-chartjs-2'
 import Chart from 'chart.js/auto';
