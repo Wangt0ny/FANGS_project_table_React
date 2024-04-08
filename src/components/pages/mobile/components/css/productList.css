@@ -9,7 +9,7 @@
 
 .button-cotainer {
     display: none;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
 }

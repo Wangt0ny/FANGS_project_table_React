@@ -11,7 +11,7 @@
     align-items: center;
     border-bottom: 1px solid rgba(54, 27, 18, 1);
     position: fixed;
-    width: 100%;
+    width: 100vw;
     background-color: white;
     z-index: 99;
 }
