@@ -19,13 +19,27 @@ function SeatItem(props) {
         setOpenOption(!openOption);
     }
 
-    function addSeat(num) {
-        let search = onSeat.find(num => num === seatNum)
+    useEffect(addToLocal, [qrcode])
+
+    function addSeat() {
+        let search = onSeat.find(x => x.num === seatNum)
         if (search === undefined) {
-            let newArray = [...onSeat]
-            newArray.push(num)
-            setOnSeat(newArray)
             setQrcode('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/QR_code_of_Chinese_Wikipedia_main_page_20131019.svg/800px-QR_code_of_Chinese_Wikipedia_main_page_20131019.svg.png')
+        } else {
+            return
+        }
+    }
+
+    function addToLocal() {
+        if (qrcode !== '') {
+            let search = onSeat.find(x => x.num === seatNum)
+            if (search === undefined) {
+                let newArray = [...onSeat]
+                newArray.push({ num: seatNum, url: qrcode })
+                setOnSeat(newArray)
+            } else {
+                return
+            }
         } else {
             return
         }
@@ -33,18 +47,18 @@ function SeatItem(props) {
     }
 
     function displaySeatState() {
-        let search = onSeat.find(num => num === seatNum)
+        let search = onSeat.find(x => x.num === seatNum)
         return search ? <span className="text-danger">用餐中</span> : <span className="text-success">空桌</span>
     }
 
     function displayOrderButton() {
-        let search = onSeat.find(num => num === seatNum)
+        let search = onSeat.find(x => x.num === seatNum)
         return search ? <Link className="seat-order-btn" to={`/order/${seatNum}`} >點餐/結帳</Link> : <></>
     }
 
     function displayQRcodeImage() {
-        let search = onSeat.find(num => num === seatNum)
-        return search ? <img className="qr-img" src={qrcode} /> : '生成QR code'
+        let search = onSeat.find(x => x.num === seatNum)
+        return search ? <img className="qr-img" src={search.url} /> : '生成QR code'
     }
 
     return (

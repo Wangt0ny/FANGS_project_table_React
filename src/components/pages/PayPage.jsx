@@ -52,7 +52,7 @@ function PayPage(props) {
     function clearTable(number) {
         console.log(number)
         let newArray = [...onSeat]
-        newArray = newArray.filter(x => x != number)
+        newArray = newArray.filter(x => x.num != number)
         setOnSeat(newArray)
         location.href = '/'
     }
