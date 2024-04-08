@@ -1,7 +1,6 @@
 function TabButtons(props) {
 
-    let setIndex = props.setIndex
-    let setFormOpen = props.setFormOpen
+    let { setIndex, setFormOpen, setOpenSelect } = props
 
     let tabList = [
         {
@@ -29,6 +28,7 @@ function TabButtons(props) {
     function switchIndex(num) {
         setIndex(num)
         setFormOpen(false)
+        setOpenSelect(false)
     }
     return (
         <div className="tab">

@@ -54,6 +54,7 @@ function PayPage(props) {
         let newArray = [...onSeat]
         newArray = newArray.filter(x => x != number)
         setOnSeat(newArray)
+        location.href = '/'
     }
 
     return (

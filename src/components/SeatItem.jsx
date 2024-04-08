@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 function SeatItem(props) {
     let { seatNum, Open, setOpen, onSeat, setOnSeat } = props
     let [openOption, setOpenOption] = useState(false);
+    let [qrcode, setQrcode] = useState('')
 
     useEffect(() => {
         if (Open) {
@@ -24,6 +25,7 @@ function SeatItem(props) {
             let newArray = [...onSeat]
             newArray.push(num)
             setOnSeat(newArray)
+            setQrcode('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/QR_code_of_Chinese_Wikipedia_main_page_20131019.svg/800px-QR_code_of_Chinese_Wikipedia_main_page_20131019.svg.png')
         } else {
             return
         }
@@ -35,15 +37,25 @@ function SeatItem(props) {
         return search ? <span className="text-danger">用餐中</span> : <span className="text-success">空桌</span>
     }
 
+    function displayOrderButton() {
+        let search = onSeat.find(num => num === seatNum)
+        return search ? <Link className="seat-order-btn" to={`/order/${seatNum}`} >點餐/結帳</Link> : <></>
+    }
+
+    function displayQRcodeImage() {
+        let search = onSeat.find(num => num === seatNum)
+        return search ? <img className="qr-img" src={qrcode} /> : '生成QR code'
+    }
+
     return (
         <div className="seat-layout">
             <div className="seat" onClick={(e) => { openSeat(e) }}>
                 <div className="seat-number">{seatNum}</div>
                 <div className="seat-state">{displaySeatState()}</div>
             </div>
-            <div className="seat-option-content" style={openOption ? { display: 'block' } : { display: 'none' }}>
-                <Link className="seat-order-btn" to={`/order/${seatNum}`} >點餐/結帳</Link>
-                <a className="seat-qrcode-btn" onClick={() => addSeat(seatNum)}><img src="" />生成QR code</a>
+            <div className={openOption ? "seat-option-content active" : "seat-option-content"} >
+                {displayOrderButton()}
+                <a className="seat-qrcode-btn" onClick={() => addSeat(seatNum)}>{displayQRcodeImage()}</a>
             </div>
         </div>
     );

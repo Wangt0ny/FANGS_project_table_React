@@ -87,7 +87,7 @@ function ReportPage() {
 
     return (
         <>
-            <div className="right-container">
+            <div className="report-container">
                 <div className="turnover-content">
                     <div className="turnover-info">
                         <div className="turnover-info-title">日營業額</div>

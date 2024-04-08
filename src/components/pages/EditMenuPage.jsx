@@ -11,6 +11,7 @@ function EditMenuPage() {
     let [index, setIndex] = useState(1);
     let [formOpen, setFormOpen] = useState(false)
     let [switchForm, setSwitchForm] = useState(false)
+    let [openSelect, setOpenSelect] = useState(false)
 
     let [nameInput, setNameInput] = useState('')
     let [priceInput, setPriceInput] = useState('')
@@ -21,7 +22,8 @@ function EditMenuPage() {
         <div className="right-container form-layout">
             <TabButtons data={productDataList}
                 setIndex={setIndex}
-                setFormOpen={setFormOpen} />
+                setFormOpen={setFormOpen}
+                setOpenSelect={setOpenSelect} />
 
             <TabContent productDataList={productDataList}
                 index={index}
@@ -29,7 +31,8 @@ function EditMenuPage() {
                 setFormOpen={setFormOpen}
                 setNameInput={setNameInput}
                 setPriceInput={setPriceInput}
-                setTypeInput={setTypeInput} />
+                setTypeInput={setTypeInput}
+                setOpenSelect={setOpenSelect} />
 
             <EditMenuForm
                 formOpen={formOpen}
@@ -43,7 +46,9 @@ function EditMenuPage() {
                 typeInput={typeInput}
                 setTypeInput={setTypeInput}
                 imgInput={imgInput}
-                setImgInput={setImgInput} />
+                setImgInput={setImgInput}
+                openSelect={openSelect}
+                setOpenSelect={setOpenSelect} />
 
             <EditMenuFormButton setFormOpen={setFormOpen}
                 setSwitchForm={setSwitchForm} />

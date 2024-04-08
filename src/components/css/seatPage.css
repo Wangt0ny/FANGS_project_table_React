@@ -48,6 +48,10 @@
     display: none;
 }
 
+.seat-option-content.active {
+    display: block;
+}
+
 .seat-order-btn {
     display: block;
     text-decoration: none;
@@ -67,4 +71,9 @@
     font-weight: 600;
     padding: 5px;
     user-select: none;
+}
+
+.qr-img {
+    width: 100px;
+    height: 100px;
 }

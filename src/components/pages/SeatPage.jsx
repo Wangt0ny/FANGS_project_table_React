@@ -7,6 +7,7 @@ function SeatPage(props) {
     let { onSeat, setOnSeat } = props
     let [Open, setOpen] = useState(false);
 
+
     function closeOption(e) {
         setOpen(true)
         console.log("seat-container")
@@ -19,7 +20,8 @@ function SeatPage(props) {
             Open={Open}
             setOpen={setOpen}
             onSeat={onSeat}
-            setOnSeat={setOnSeat} />)
+            setOnSeat={setOnSeat}
+        />)
     }
 
     return (

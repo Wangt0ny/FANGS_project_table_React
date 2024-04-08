@@ -14,23 +14,27 @@ function EditMenuForm(props) {
         typeInput,
         setTypeInput,
         imgInput,
-        setImgInput
+        setImgInput,
+        openSelect,
+        setOpenSelect
     } = props
 
-    let [openSelect, setOpenSelect] = useState(false)
 
     const selectType = useRef();
     const selectCurrent = selectType.current;
 
-    function handleselected(val) {
+
+    function handleselected(val, e) {
         setTypeInput(val)
         setOpenSelect(false)
     }
 
     function getOptions() {
         if (selectCurrent !== undefined) {
-            return [...selectCurrent.getElementsByTagName('select')[0].options].map((item) => {
-                return <div key={item.innerHTML} onClick={() => handleselected(item.value)}>{item.innerHTML}</div>
+            let valueList = [...selectCurrent.getElementsByTagName('select')[0].options].map(x => x.value)
+
+            return [...selectCurrent.getElementsByTagName('select')[0].options].map((item, index) => {
+                return <div className={valueList[index] === typeInput ? 'same-as-selected' : ''} key={item.innerHTML} onClick={(e) => handleselected(item.value, e)}>{item.innerHTML}</div>
             })
         } else {
             return []
@@ -45,6 +49,11 @@ function EditMenuForm(props) {
             // console.log(optList[optValueList.indexOf(typeInput)].innerHTML)
             return optList[optValueList.indexOf(typeInput)].innerHTML
         }
+    }
+
+    function openOption(e) {
+        e.stopPropagation();
+        setOpenSelect(!openSelect)
     }
 
 
@@ -75,7 +84,7 @@ function EditMenuForm(props) {
     }
 
     return (
-        <div className={formOpen ? 'form-page active' : 'form-page'}>
+        <div className={formOpen ? 'form-page active' : 'form-page'} onClick={() => setOpenSelect(false)}>
             <div className="form-title">{switchForm ? '更改' : '新增'}</div>
             <form className="form-option">
 
@@ -109,7 +118,7 @@ function EditMenuForm(props) {
                         <option value="dumplings">火鍋餃類</option>
                     </select>
                     <div className={openSelect ? 'select-selected select-arrow-active' : 'select-selected'}
-                        onClick={() => setOpenSelect(!openSelect)}>{getSelected()}</div>
+                        onClick={(e) => openOption(e)}>{getSelected()}</div>
                     <div className={openSelect ? 'select-items' : 'select-items select-hide'} >
                         {getOptions()}
                     </div>

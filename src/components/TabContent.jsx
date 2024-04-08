@@ -6,7 +6,8 @@ function TabContent(props) {
         setFormOpen,
         setNameInput,
         setPriceInput,
-        setTypeInput
+        setTypeInput,
+        setOpenSelect
     } = props
 
     let meatType = productDataList.filter((x) => { return x.type === "meat" });
@@ -23,6 +24,7 @@ function TabContent(props) {
         setPriceInput(price);
         setNameInput(product);
         setTypeInput(type)
+        setOpenSelect(false)
     }
 
     return (
