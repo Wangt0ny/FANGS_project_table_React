@@ -38,9 +38,9 @@ function OrderPage(props) {
             </div>
 
             <div className="order-price-content">
-                <div className="order-price-info">訂單金額:<span></span></div>
-                <div className="order-price-info">服務費:<span></span></div>
-                <div className="order-price-info">總金額:<span></span></div>
+                <div className="mobile-order-price-info">訂單金額:<span></span></div>
+                <div className="mobile-order-price-info">服務費:<span></span></div>
+                <div className="mobile-order-price-info">總金額:<span></span></div>
             </div>
         </div>
     );

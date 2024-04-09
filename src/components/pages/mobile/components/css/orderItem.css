@@ -9,7 +9,7 @@
     color: black;
 }
 
-.cart-item>img {
+.cart-item .mobile-order-image {
     height: 100%;
     object-fit: cover;
 }

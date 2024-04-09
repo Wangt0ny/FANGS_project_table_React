@@ -40,7 +40,7 @@ function Shopcart(props) {
     return (
         <div className={openCart ? "mobile-cart-page active" : "mobile-cart-page"}>
             <i className="bi bi-x-lg mb-close-shopcart-page" onClick={closeShopcart}></i>
-            <div className="cart">購物車</div>
+            <div className="shopcart-title">購物車</div>
             <div className="shopping-cart">
                 {shopcartItem()}
             </div>

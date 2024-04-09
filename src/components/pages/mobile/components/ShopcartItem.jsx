@@ -20,7 +20,7 @@ function ShopcartItem(props) {
     }
 
     return (
-        <div className="cart-item">
+        <div className="mobile-cart-item">
             <img src={search.img} alt="pic" />
             <div className="cart-info">
                 <p className="cart-info-title">{search.product}</p>

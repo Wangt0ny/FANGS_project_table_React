@@ -1,4 +1,4 @@
-.cart-item {
+.mobile-cart-item {
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -9,7 +9,7 @@
     color: black;
 }
 
-.cart-item>img {
+.mobile-cart-item>img {
     height: 100%;
     object-fit: cover;
 }

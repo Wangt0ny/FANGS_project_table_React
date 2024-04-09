@@ -44,7 +44,7 @@ function TabContent(props) {
                                         </div>
                                         <div className="card-btn-group">
                                             <i className="bi bi-pencil" onClick={() => editForm(price, product, type)}></i>
-                                            <i className="bi bi-trash"></i>
+                                            <i className="bi bi-trash font-28"></i>
                                         </div>
                                     </div>
                                 </div>

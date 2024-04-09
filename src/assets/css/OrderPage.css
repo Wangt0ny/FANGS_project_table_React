@@ -295,14 +295,14 @@
     border: 1px solid black;
 }
 
-.item-count {
+.order-card-btn-group .item-count {
     text-align: center;
     width: 40px;
     user-select: none;
 }
 
-.bi-dash,
-.bi-plus {
+.order-card-btn-group .bi-dash,
+.order-card-btn-group .bi-plus {
     background-color: black;
     color: #fff;
     aspect-ratio: 1 / 1;
@@ -312,6 +312,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
 }
 
 /* ========================訂單頁面開始======================== */

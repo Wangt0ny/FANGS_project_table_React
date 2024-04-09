@@ -1,11 +1,11 @@
-.mycard {
+.mobile-mycard {
     display: flex;
     border-bottom: 1px solid rgba(54, 27, 18, 1);
     padding-bottom: 5px;
     margin-bottom: 8px;
 }
 
-.mycard>.card-img {
+.mobile-mycard>.card-img {
     width: 100px;
     object-fit: cover;
 }

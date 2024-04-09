@@ -124,6 +124,7 @@
     cursor: pointer;
 }
 
-.bi-trash {
+.bi-trash.font-28 {
+    font-size: 28px;
     color: red;
 }

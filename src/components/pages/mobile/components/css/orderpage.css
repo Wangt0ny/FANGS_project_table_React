@@ -30,7 +30,7 @@
     height: auto;
 }
 
-.order-price-info {
+.mobile-order-price-info {
     display: flex;
     justify-content: space-between;
     padding: 5px;

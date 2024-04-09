@@ -57,7 +57,7 @@ function Product(props) {
 
     return (
         <div className="col-12 col-lg-6">
-            <div className="mycard">
+            <div className="mobile-mycard">
                 <img className="card-img" src={img} alt="project-pic" />
                 <div className="mobile-mycard-body">
                     <div className="body-info">
